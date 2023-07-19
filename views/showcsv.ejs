@@ -1,0 +1,45 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <i class="fa-solid fa-circle-arrow-left" style="color: #b8b8b8;"></i>
+      </a>
+      <div class="d-flex">
+        <div class="title me-2">CSV Upload</div>
+        <div class="sub-title me-2">Viewer</div>
+        <div class="file-name"><%= fileName %></div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- search bar -->
+  <div class="container mt-5 pt-5">
+    <form id="searchForm" class="d-flex mb-3">
+      <input type="text" id="search-input" placeholder="Search data..." class="form-control me-2">
+      <button id="go" class="btn btn-outline-success search-btn" type="button">Go</button>
+    </form>
+    <p id="total-rows">Total Rows: <%=length%></p>
+  </div>
+  
+  <!-- search results -->
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <% for(let h of head) { %>
+            <th><%= h %></th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let row of data) { %>
+          <tr>
+            <% for(let key of Object.keys(row)) { %>
+              <td><%= row[key] %></td>
+            <% } %>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  

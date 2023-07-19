@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const csvSchema = new mongoose.Schema({
+const fileSchema = new mongoose.Schema({
     fileName: {
         type: String
     },
@@ -9,8 +9,11 @@ const csvSchema = new mongoose.Schema({
     },
     file: {
         type: String
+    }},{ 
+    timestamps:{
+        options: { timeZone: 'Asia/Kolkata' }
     }
-});
+    });
 
-const CSV = mongoose.model('csv',csvSchema);
-module.exports = CSV;
+const files = mongoose.model('files',fileSchema);
+module.exports = files;

@@ -9,6 +9,8 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
+const bodyParser = require('body-parser');
+const CSV = require('csv-parser');
 
 app.use(express.urlencoded());
 
@@ -16,7 +18,7 @@ app.use(cookieParser());
 
 app.use(express.static('./assets'));
 
-
+app.use(bodyParser.json());
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);

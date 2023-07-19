@@ -1,0 +1,64 @@
+<!-- header -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="fa-solid fa-circle-arrow-left" style="color: #b8b8b8; visibility: hidden;"></i>
+      </a>
+      <span class="navbar-text">
+        CSV Upload
+      </span>
+    </div>
+  </nav>
+  
+  <!-- upload -->
+  <div class="container my-5">
+    <!-- main text -->
+    <div class="text-center mb-4">
+      <h1>Upload a File Here</h1>
+      <p>Reads CSV file and displays its content in tabular form</p>
+    </div>
+  
+    <!-- upload box -->
+    <form action="/user/csv/upload" method="post" enctype="multipart/form-data" class="d-flex justify-content-center mb-4">
+      <input type="file" id="csvFile" name="file" accept=".csv" class="form-control me-2">
+      <button class="btn btn-primary upload-btn">Upload</button>
+    </form>
+  </div>
+  
+  <!-- show uploaded files -->
+  <div class="container mb-5">
+    <div class="text-center mb-4">
+      <h2>Uploaded files</h2>
+    </div>
+  
+    <% if(files.length==0) { %>
+      <div class="text-center">No files to show!</div>
+    <% } else { %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time (UTC)</th>
+            <th>View</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let file of files) { %>
+            <tr>
+              <td><%= file.fileName %></td>
+              <td><%= file.createdAt.toLocaleDateString() %></td>
+              <td><%= file.createdAt.toLocaleTimeString() %></td>
+              <td><a href="/user/csv/view/<%= file.file %>" class="view-link"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+              <td><a href="/delete/<%= file.file %>" class="delete-link"><i
+                    class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+  
+  
