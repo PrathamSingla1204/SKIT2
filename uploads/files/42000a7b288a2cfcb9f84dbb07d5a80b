@@ -1,0 +1,6 @@
+student Id, Student name, Student college, Student email, Student status, DSA Final Score, WebD Final Score, React Final Score, Interview date, Interview company, Interview result
+647fa1cc820ef0ae367be60c,mj,IIT,mj@gmail.com,Placed,99,99,99,2023-06-22,Google,PASS
+647fa1cc820ef0ae367be60c,mj,IIT,mj@gmail.com,Placed,99,99,99,2023-06-09,amazon,PASS
+647fa1fa820ef0ae367be61b,Pratham Singla,ADGITM,pratham.singla.762@gmail.com,Not placed,35,30,90,2023-06-09,amazon,PASS
+647fb955d70aeefe68bf2190,abc,xyz,abc@gmail.com,Not placed,1,1,1,2023-06-09,amazon,PASS
+647fb955d70aeefe68bf2190,abc,xyz,abc@gmail.com,Not placed,1,1,1,2023-06-22,Google,PASS

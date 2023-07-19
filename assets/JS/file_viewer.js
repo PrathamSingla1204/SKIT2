@@ -1,7 +1,7 @@
 console.log('Im in');
 
 
-document.getElementById("go").addEventListener("click", searchTable);
+document.getElementById("Search").addEventListener("click", searchTable);
 
 function searchTable() {
   // Get the input value and convert it to lowercase
@@ -17,9 +17,10 @@ function searchTable() {
     
     // If the input value is found in the row text, highlight the row
     if (rowText.includes(input)) {
-      rows[i].classList.add("highlight");
-    } else {
-      rows[i].classList.remove("highlight");
-    }
+        rows[i].style.backgroundColor = "yellow";
+      } else {
+        rows[i].style.backgroundColor = ""; // This will remove any previously set background color
+      }
+      
   }
 }
